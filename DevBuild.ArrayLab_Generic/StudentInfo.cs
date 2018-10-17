@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DevBuild.Utilities;
 
 namespace DevBuild.ArrayLab_Generic
 {
-    class Program
+    class StudentInfo
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
