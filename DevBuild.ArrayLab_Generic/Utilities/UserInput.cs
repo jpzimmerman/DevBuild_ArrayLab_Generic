@@ -10,7 +10,6 @@ namespace DevBuild.Utilities
     
     class UserInput
     {
-
         /// <summary>
         /// This function prompts the user to type "y", "yes", "n", or "no" to provide a yes-or-no answer. Function stays in a loop until 
         /// user enters something we recognize as a yes or no answer.
@@ -36,6 +35,21 @@ namespace DevBuild.Utilities
                 default: tmp = YesNoAnswer.AnswerNotGiven; break;
             }
             return tmp;
+        }
+
+        public static void PromptUntilValidEntry(string message, ref string response, params InformationType[] inputValidationFilters)
+        {
+            Console.Write(message);
+            while (String.IsNullOrEmpty(response))
+            {
+                response = Console.ReadLine().Trim().ToLower();
+                if (String.IsNullOrEmpty(response))
+                {
+                    Console.Write(message);
+                }
+                else return;
+            }
+            return;
         }
     }
 }
